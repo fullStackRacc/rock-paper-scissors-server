@@ -10,6 +10,8 @@ app.use(express.json());
 app.use(bodyParser.urlencoded({ extended: true }));
 app.use(bodyParser.json());
 
+let playerChoice 
+
 const Game = {
   //Score count
   wins: 0,
@@ -45,14 +47,20 @@ const Game = {
 
 //Renders the index.ejs as the home page
 app.get("/", (req, res) => {
-  res.render("index.ejs");
+  res.render("index.ejs", {"wins": Game.wins});
 });
+
+app.put('/play', (req, res) => {
+  playerChoice = req.body.id;
+  console.log("playing game")
+  Game.playGame(playerChoice, Game.randomChoice());
+})
+//------
+app.get('/play', (req,res)=>{
+  console.log('res.json')
+  res.json({'wins' : Game.wins, 'losses': Game.losses, 'ties': Game.ties})
+})
 
 app.listen(PORT, (req, res) => {
   console.log(`Listening on ${PORT}`);
 });
-
-for (let i = 0; i < 100; i++) {
-  console.log(Game.playGame(Game.randomChoice(), Game.randomChoice()));
-}
-console.log(`Wins: ${Game.wins}, Losses: ${Game.losses}, Ties: ${Game.ties}`);

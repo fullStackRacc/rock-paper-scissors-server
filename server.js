@@ -54,8 +54,9 @@ app.put('/play', (req, res) => {
   playerChoice = req.body.id;
   console.log("playing game")
   Game.playGame(playerChoice, Game.randomChoice());
+  res.end()
 })
-//------
+
 app.get('/play', (req,res)=>{
   console.log('res.json')
   res.json({'wins' : Game.wins, 'losses': Game.losses, 'ties': Game.ties})

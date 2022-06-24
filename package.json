@@ -1,7 +1,6 @@
 {
   "name": "rps-server-side",
   "version": "1.0.0",
-  "description": "",
   "main": "server.js",
   "scripts": {
     "dev": "nodemon server.js",
@@ -15,6 +14,15 @@
     "express": "^4.18.1"
   },
   "devDependencies": {
-    "nodemon": "^1.3.3"
-  }
+    "nodemon": "^1.19.4"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/fullStackRacc/rock-paper-scissors-server.git"
+  },
+  "bugs": {
+    "url": "https://github.com/fullStackRacc/rock-paper-scissors-server/issues"
+  },
+  "homepage": "https://github.com/fullStackRacc/rock-paper-scissors-server#readme",
+  "description": ""
 }

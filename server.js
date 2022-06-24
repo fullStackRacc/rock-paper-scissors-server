@@ -52,7 +52,7 @@ app.listen(PORT, (req, res) => {
   console.log(`Listening on ${PORT}`);
 });
 
-// for (let i = 0; i < 100; i++) {
-//   console.log(Game.playGame(Game.randomChoice(), Game.randomChoice()));
-//   console.log(`Wins: ${Game.wins}, Losses: ${Game.losses}, Ties: ${Game.ties}`);
-// }
+for (let i = 0; i < 100; i++) {
+  console.log(Game.playGame(Game.randomChoice(), Game.randomChoice()));
+}
+console.log(`Wins: ${Game.wins}, Losses: ${Game.losses}, Ties: ${Game.ties}`);
